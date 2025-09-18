@@ -11,6 +11,7 @@ program ejemplo {
   game.addVisual(lataDeCerveza)
   game.addVisual(barrilDeCombustible)
   game.addVisual(plantaDeTratamiento)
+  game.addVisual(cd)
   game.addVisual(hornet)
 
   game.addVisualCharacter(capy)
@@ -29,7 +30,7 @@ program ejemplo {
 
   game.onTick(1000, "moverCD", {
     x = x+1
-    cd.position(game.at(0,x))
+    cd.position(game.at(x,4))
   })
   
   keyboard.h().onPressDo(

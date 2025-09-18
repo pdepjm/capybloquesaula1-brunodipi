@@ -6,7 +6,7 @@ object capy {
   
   method recolectarBasura(basura){
     game.removeVisual(basura)
-    game.say(self, "Recolecté: barril de " + basura.nombre())
+    game.say(self, "Recolecté:  " + basura.nombre())
     impactoEnLaHuellaDeCarbonoTotal += basura.impactoEnLaHuellaDeCarbono()
   }
   
@@ -20,7 +20,7 @@ object capy {
 }
 
 object hornet {
-  var property position = game.at(5,5)
+  var property position = game.at(6,0)
   var impactoEnLaHuellaDeCarbonoTotal = 100 
   
   method recolectarBasura(basura){

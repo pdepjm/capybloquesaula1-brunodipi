@@ -70,11 +70,13 @@ object barrilDeCombustible {
 
 object cd{
   var impactoEnHuellaDeCarbono = 181
-  var position = game.origin()
+  var position = game.at(0,4)
 
   method position(nueva) {
     position = nueva
   }
+
+  method position() = position
 
   method impactoEnLaHuellaDeCarbono() = impactoEnHuellaDeCarbono
 
