@@ -11,7 +11,11 @@ program ejemplo {
   game.addVisual(lataDeCerveza)
   game.addVisual(barrilDeCombustible)
   game.addVisual(plantaDeTratamiento)
+  game.addVisual(hornet)
+
   game.addVisualCharacter(capy)
+
+  var x=0
   
   game.onCollideDo(capy, { elemento =>
     elemento.colisionarCon(capy)
@@ -21,6 +25,11 @@ program ejemplo {
   game.onTick(5000, "cambiarCombustible", {
     barrilDeCombustible.cambiarCombustible()
     game.say(barrilDeCombustible, "El barril ahora tiene: " + barrilDeCombustible.combustibleActual().sufijo() )
+  })
+
+  game.onTick(1000, "moverCD", {
+    x = x+1
+    cd.position(game.at(0,x))
   })
   
   keyboard.h().onPressDo(
