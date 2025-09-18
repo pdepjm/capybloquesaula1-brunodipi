@@ -67,3 +67,32 @@ object barrilDeCombustible {
     game.removeTickEvent("cambiarCombustible")
   }
 }
+
+object cd{
+  var impactoEnHuellaDeCarbono = 181
+  var position = game.at(0,4)
+
+  method position(nueva) {
+    position = nueva
+  }
+
+  method position() = position
+
+  method impactoEnLaHuellaDeCarbono() = impactoEnHuellaDeCarbono
+
+  method nombre() = "cdGenerico"
+
+  method image() = self.nombre() + ".jpg"  
+
+  method esReciclable() = true
+  
+  method tratar() {
+    impactoEnHuellaDeCarbono -= 15
+  }
+  
+  method colisionarCon(capy) {
+    capy.recolectarBasura(self)
+    game.removeTickEvent("moverCD")
+  }
+
+}
